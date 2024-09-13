@@ -23,22 +23,12 @@ public class TennisGame1 implements TennisGame {
         int tempScore=0;
         if (player1Score == player2Score)
         {
-            switch (player1Score)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-                default:
-                        score = "Deuce";
-                    break;
-                
-            }
+            score = switch (player1Score) {
+                case 0 -> "Love-All";
+                case 1 -> "Fifteen-All";
+                case 2 -> "Thirty-All";
+                default -> "Deuce";
+            };
         }
         else if (player1Score >=4 || player2Score >=4)
         {
